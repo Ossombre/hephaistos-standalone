@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import Vue from 'vue'
+/* import Vue from 'vue'
 import vuetify from '../plugins/vuetify'
-import Exercises from './Exercises.vue'
+import Exercises from './Exercises.vue' */
 export default {
   name: 'Login',
   data: () => ({
@@ -88,14 +88,7 @@ export default {
         this.loggedIn = true
         console.log('YOU DID IT YOU MAD LAD')
         // this.state = false
-        // this.$router.replace(this.$route.query.redirect || '/exercises')
         this.$router.push('/exercises')
-        new Vue({
-          data: this.$router.state,
-          router: this.$router,
-          vuetify,
-          render: h => h(Exercises)
-        }).$mount('#app')
       } catch (err) {
         console.log('err', err)
         this.errorLogin = err

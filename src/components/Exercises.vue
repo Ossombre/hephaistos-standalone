@@ -46,13 +46,16 @@ export default {
         const title = ''
         // eslint-disable-next-line camelcase
         var template_regions = ['Ginnungagap']
+        // eslint-disable-next-line camelcase
+        const creation_date = new Date()
         await this.axios.post('http://localhost:3000/api/v1/exercise', {
           instructions,
           lang,
           title,
           tests,
           solution,
-          template_regions
+          template_regions,
+          creation_date // maybe not here, doesn't work
         })
         console.log('post exercise request completed')
       } catch (err) {

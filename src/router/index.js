@@ -6,7 +6,7 @@ import store from './sotre/index'
 
 Vue.use(VueRouter)
 
-async function beforeEnter (_to, -FormData, next) {
+async function beforeEnter (_to, _FormData, next) {
   if (!store.getters['user/isAuthenticated']) {
     await store.dispatch('user/fetchUser')
   }
